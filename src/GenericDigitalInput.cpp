@@ -35,6 +35,7 @@ String GenericDigitalInput::getConfig() {
 	// Allocate the JSON document
 	JsonDocument doc;
 	// Assign current values
+	doc["Name"] = Description.name;
 	doc["Pin"] = digital_config.Pin;
 	doc["Mode"]["current"] = digital_config.mode;
 	doc["Mode"]["options"][0] = "Input";
@@ -65,6 +66,7 @@ bool GenericDigitalInput::setConfig(String config, bool save) {
 		return false;
 	}
 	// Assign loaded values
+	Description.name = doc["Name"].as<String>();
 	digital_config.Pin = doc["Pin"].as<int>();
 	digital_config.mode = doc["Mode"]["current"].as<String>();
 
