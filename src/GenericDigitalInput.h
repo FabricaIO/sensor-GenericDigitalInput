@@ -15,7 +15,7 @@
 /// @brief Class describing a generic output on a GPIO pin
 class GenericDigitalInput : public Sensor {
 	public:
-		GenericDigitalInput(int Pin, String configFile = "GenericDigitalInput.json");
+		GenericDigitalInput(String Name, int Pin, String configFile = "GenericDigitalInput.json");
 		bool begin();
 		String getConfig();
 		bool setConfig(String config, bool save);

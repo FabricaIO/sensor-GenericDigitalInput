@@ -1,9 +1,10 @@
 #include"GenericDigitalInput.h"
 
 /// @brief Creates a generic analog input
+/// @param Name The device name
 /// @param Pin Pin to use
 /// @param configFile Name of the config file to use
-GenericDigitalInput::GenericDigitalInput(int Pin, String configFile) {
+GenericDigitalInput::GenericDigitalInput(String Name, int Pin, String configFile) : Sensor(Name) {
 	config_path = "/settings/sen/" + configFile;
 	digital_config.Pin = Pin;
 }
@@ -13,7 +14,6 @@ GenericDigitalInput::GenericDigitalInput(int Pin, String configFile) {
 bool GenericDigitalInput::begin() {
 	// Set description
 	Description.type = "digital input";
-	Description.name = "Generic Digital Input";
 	Description.parameterQuantity = 1;
 	Description.parameters = {"Digital Signal"};
 	Description.units = {"binary"};
