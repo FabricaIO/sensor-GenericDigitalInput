@@ -23,12 +23,12 @@
 	"frameworks": "arduino",
 	"platforms": "*",
 	"fabricaio" : {
-		"name": "digitalInput",
+		"name": "DigitalInput",
 		"type": 0,
 		"category": "digital sensor",
 		"libname": "GenericDigitalInput",
 		"includes": ["GenericDigitalInput"],
-		"description": "Generic analog input",
+		"description": "Generic digital input sensor",
 		"constructor":
 		[
 			[
